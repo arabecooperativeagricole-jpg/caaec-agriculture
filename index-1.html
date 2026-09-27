@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CAAEC Agriculture | المنصة الفلاحية</title>
+  <meta name="description" content="CAAEC Agriculture - منصة فلاحية مغربية للمنتجات والمواشي والخدمات والإعلانات.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="#">CAAEC <span>Agriculture</span></a>
+    <nav>
+      <a href="#products">المنتجات</a>
+      <a href="#livestock">المواشي</a>
+      <a href="#services">الخدمات</a>
+      <a href="#ads">الإعلانات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <button class="lang" onclick="toggleLang()">FR / AR</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">منصة فلاحية مغربية</p>
+      <h1>CAAEC Agriculture</h1>
+      <h2>الفلاحة المغربية في مكان واحد 🌱</h2>
+      <p>منتجات فلاحية، مواشي، خدمات وإعلانات تجمع الفلاحين والزبناء.</p>
+      <div class="actions">
+        <a class="btn primary" href="#products">اكتشف المنتجات</a>
+        <a class="btn secondary" href="#ads">أضف إعلاناً</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="sun">☀️</div>
+      <div class="farm-icons">🐄 🐑 🐐 🐔 🌾 🐝 🫒</div>
+      <p>سوق وخدمات الفلاحة المغربية</p>
+    </div>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="container">
+    <p class="eyebrow">السوق الفلاحي</p>
+    <h2>المنتجات الفلاحية</h2>
+    <div class="cards">
+      <article class="card"><div class="icon">🥚</div><h3>البيض</h3><p>منتجات الدواجن والبيض.</p><button onclick="contact('البيض')">طلب المنتج</button></article>
+      <article class="card"><div class="icon">🍯</div><h3>العسل</h3><p>عسل ومنتجات النحل.</p><button onclick="contact('العسل')">طلب المنتج</button></article>
+      <article class="card"><div class="icon">🫒</div><h3>زيت الزيتون</h3><p>منتجات الزيتون والزيوت.</p><button onclick="contact('زيت الزيتون')">طلب المنتج</button></article>
+      <article class="card"><div class="icon">🌾</div><h3>الأعلاف</h3><p>أعلاف ومنتجات زراعية.</p><button onclick="contact('الأعلاف')">طلب المنتج</button></article>
+    </div>
+  </div>
+</section>
+
+<section id="livestock" class="section alt">
+  <div class="container">
+    <p class="eyebrow">سوق المواشي</p>
+    <h2>بيع وشراء المواشي</h2>
+    <div class="cards">
+      <article class="card"><div class="icon">🐄</div><h3>الأبقار</h3><p>إعلانات الأبقار ومعلومات البائع.</p></article>
+      <article class="card"><div class="icon">🐑</div><h3>الأغنام</h3><p>إعلانات الأغنام مع التواصل المباشر.</p></article>
+      <article class="card"><div class="icon">🐐</div><h3>الماعز</h3><p>إعلانات الماعز ومستلزمات التربية.</p></article>
+      <article class="card"><div class="icon">🐔</div><h3>الدواجن</h3><p>الدجاج والكتاكيت ومنتجات الدواجن.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="container">
+    <p class="eyebrow">خدمات الفلاح</p>
+    <h2>الخدمات والمعدات</h2>
+    <div class="service-list">
+      <div>🚜 كراء الآلات الفلاحية</div>
+      <div>💧 السقي وتجهيزات الري</div>
+      <div>🌱 الحرث والحصاد</div>
+      <div>🚚 نقل المنتجات</div>
+      <div>🔧 صيانة وتجهيزات فلاحية</div>
+      <div>👨‍🌾 خدمات الفلاحين</div>
+    </div>
+  </div>
+</section>
+
+<section id="ads" class="section alt">
+  <div class="container two-col">
+    <div>
+      <p class="eyebrow">الإعلانات</p>
+      <h2>أضف إعلانك الفلاحي</h2>
+      <p>بيع منتوج، ماشية، آلة أو خدمة فلاحية. هذه النسخة الأولية تحفظ الإعلان محلياً في المتصفح.</p>
+    </div>
+    <form id="adForm" class="form" onsubmit="addAd(event)">
+      <input id="name" required placeholder="اسمك">
+      <input id="title" required placeholder="عنوان الإعلان">
+      <select id="category"><option>مواشي</option><option>منتجات</option><option>معدات</option><option>خدمات</option></select>
+      <textarea id="details" required placeholder="تفاصيل الإعلان"></textarea>
+      <button class="btn primary" type="submit">نشر الإعلان</button>
+    </form>
+  </div>
+  <div class="container" id="adList"></div>
+</section>
+
+<section id="contact" class="section contact">
+  <div class="container">
+    <p class="eyebrow">تواصل</p>
+    <h2>CAAEC Agriculture</h2>
+    <p>واتساب: <a href="https://wa.me/212640836390" target="_blank" rel="noopener">+212 640 836 390</a></p>
+    <p>منصة تجريبية — قبل الإطلاق التجاري يجب إضافة قاعدة بيانات، حسابات المستخدمين، الدفع، لوحة الإدارة وسياسة الخصوصية.</p>
+  </div>
+</section>
+</main>
+
+<footer><div class="container">© 2026 CAAEC Agriculture — جميع الحقوق محفوظة</div></footer>
+<script src="app.js"></script>
+</body>
+</html>
